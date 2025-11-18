@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.DashboardFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="558.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+   <children>
+      <JFXButton fx:id="btnCustomer" layoutX="260.0" layoutY="84.0" onAction="#btnCustomerOnAction" text="Customer" />
+      <JFXButton fx:id="btnProduct" layoutX="265.0" layoutY="139.0" onAction="#btnProductOnAction" text="Product" />
+      <JFXButton fx:id="btnOrder" layoutX="252.0" layoutY="212.0" onAction="#btnOrderOnAction" prefHeight="39.0" prefWidth="82.0" text="Order" />
+      <JFXButton fx:id="btnOrderDetail" layoutX="246.0" layoutY="279.0" onAction="#btnOrderDetailOnAction" prefHeight="39.0" prefWidth="96.0" text="Order Detail" />
+      <JFXButton fx:id="btnSupplier" layoutX="265.0" layoutY="349.0" onAction="#btnSupplierOnAction" prefHeight="39.0" prefWidth="81.0" text="Supplier" />
+   </children>
 </AnchorPane>
