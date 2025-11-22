@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="452.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="456.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <Label alignment="CENTER" layoutX="256.0" layoutY="63.0" prefHeight="33.0" prefWidth="74.0" text="LOGIN" />
+      <ImageView fitHeight="458.0" fitWidth="691.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Untitled%20design.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="307.0" layoutY="56.0" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" layoutX="246.0" layoutY="169.0" prefHeight="35.0" prefWidth="192.0" promptText="Username" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtPassword" layoutX="244.0" layoutY="230.0" prefHeight="35.0" prefWidth="192.0" promptText="Password" style="-fx-background-color: white;" />
+      <JFXButton fx:id="btnLogin" layoutX="314.0" layoutY="298.0" onAction="#btnLoginOnAction" prefHeight="35.0" prefWidth="66.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
