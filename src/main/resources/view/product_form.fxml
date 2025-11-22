@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="582.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
+<AnchorPane prefHeight="598.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
    <children>
       <Polygon fill="#d1c4e9" layoutX="342.0" layoutY="114.0" points="-342.0, 318.0, 219.5999755859375, -114.0, -342.0, -114.0" stroke="#d1c4e9" strokeType="INSIDE" />
       <Label layoutX="114.0" layoutY="51.0" style="-fx-border-color: #7E57C2;" text="Add Product" textFill="#5e35b1">
@@ -17,22 +17,22 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtProductId" layoutX="697.0" layoutY="79.0" promptText="Product Id">
+      <JFXTextField fx:id="txtProductId" layoutX="697.0" layoutY="40.0" promptText="Product Id">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtProductName" layoutX="697.0" layoutY="180.0" promptText="Product Name">
+      <JFXTextField fx:id="txtProductName" layoutX="697.0" layoutY="141.0" promptText="Product Name">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtSku" layoutX="697.0" layoutY="128.0" promptText="SKU">
+      <JFXTextField fx:id="txtSku" layoutX="697.0" layoutY="89.0" promptText="SKU">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="colDescription" layoutX="697.0" layoutY="230.0" promptText="Description">
+      <JFXTextField fx:id="colDescription" layoutX="697.0" layoutY="191.0" promptText="Description">
          <font>
             <Font size="14.0" />
          </font>
@@ -49,30 +49,40 @@
             <TableColumn fx:id="colQuantity" prefWidth="80.79998779296875" text="Quantity" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnAdd" layoutX="736.0" layoutY="508.0" onAction="#btnAddOnAction" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #9575CD;" text="Add" textFill="WHITE">
+      <JFXTextField fx:id="colCategoryId" layoutX="697.0" layoutY="244.0" promptText="Category Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="colSupplierId" layoutX="697.0" layoutY="295.0" promptText="Supplier Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="colPrice" layoutX="697.0" layoutY="344.0" promptText="Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="colQuantity" layoutX="697.0" layoutY="394.0" promptText="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="718.0" layoutY="446.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #9575CD;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="colCategoryId" layoutX="697.0" layoutY="283.0" promptText="Category Id">
+      <JFXButton fx:id="btnUpdate" layoutX="718.0" layoutY="495.0" onAction="#btnUpdateOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4DD0E1;" text="Update" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-      </JFXTextField>
-      <JFXTextField fx:id="colSupplierId" layoutX="697.0" layoutY="334.0" promptText="Supplier Id">
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="718.0" layoutY="544.0" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #FF6F00;" text="Delete" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-      </JFXTextField>
-      <JFXTextField fx:id="colPrice" layoutX="697.0" layoutY="383.0" promptText="Price">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="colQuantity" layoutX="697.0" layoutY="433.0" promptText="Quantity">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
+      </JFXButton>
    </children>
 </AnchorPane>

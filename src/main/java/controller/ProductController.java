@@ -13,6 +13,12 @@ public class ProductController {
     private JFXButton btnAdd;
 
     @FXML
+    private JFXButton btnDelete;
+
+    @FXML
+    private JFXButton btnUpdate;
+
+    @FXML
     private JFXTextField colCategoryId;
 
     @FXML
@@ -50,6 +56,16 @@ public class ProductController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
 
     }
 
