@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+   <children>
+      <Polygon fill="#d1c4e9" layoutX="342.0" layoutY="114.0" points="-342.0, 318.0, 219.5999755859375, -114.0, -342.0, -114.0" stroke="#d1c4e9" strokeType="INSIDE" />
+      <Label layoutX="114.0" layoutY="51.0" style="-fx-border-color: #7E57C2;" text="Place Order" textFill="#5e35b1">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtOrderId" layoutX="579.0" layoutY="63.0" promptText="Order Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtProductId" layoutX="579.0" layoutY="255.0" promptText="Produt Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCustomerName" layoutX="579.0" layoutY="187.0" promptText="Customer Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPrice" layoutX="582.0" layoutY="347.0" promptText="Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tblCart" layoutX="42.0" layoutY="156.0" prefHeight="378.0" prefWidth="465.0">
+         <columns>
+            <TableColumn fx:id="colCustomerId" prefWidth="89.60000228881836" text="Product Id" />
+            <TableColumn fx:id="colName" prefWidth="104.79998779296875" text="Product Name" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="88.80000305175781" text="Price" />
+            <TableColumn fx:id="colEmail" prefWidth="98.39996337890625" text="Quantity" />
+            <TableColumn fx:id="colTotal" prefWidth="84.80001220703127" text="Total" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddToCart" layoutX="595.0" layoutY="442.0" onAction="#btnAddToCartOnAction" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #EC407A;" text="Add to Cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="602.0" layoutY="18.0" text="Order Details">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="552.0" layoutY="44.0" prefWidth="200.0" style="-fx-background-color: black;" />
+      <Separator layoutX="550.0" layoutY="116.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" />
+      <JFXTextField fx:id="txtCustomerId" layoutX="579.0" layoutY="137.0" promptText="Customer Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Separator layoutX="550.0" layoutY="236.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" />
+      <JFXTextField fx:id="txtQuantity" layoutX="582.0" layoutY="394.0" promptText="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtProductName" layoutX="582.0" layoutY="301.0" promptText="Product Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Separator layoutX="558.0" layoutY="495.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" />
+      <Label layoutX="541.0" layoutY="519.0" text="NET TOTAL:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtTotal" layoutX="640.0" layoutY="511.0" prefHeight="30.0" prefWidth="62.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnPlaceOrder" layoutX="670.0" layoutY="557.0" onAction="#btnPlaceOrderOnAction" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: #9575CD;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

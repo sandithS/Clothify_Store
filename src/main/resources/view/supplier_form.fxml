@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="582.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+<AnchorPane prefHeight="582.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierController">
    <children>
       <Polygon fill="#d1c4e9" layoutX="342.0" layoutY="114.0" points="-342.0, 318.0, 219.5999755859375, -114.0, -342.0, -114.0" stroke="#d1c4e9" strokeType="INSIDE" />
       <Label layoutX="114.0" layoutY="51.0" style="-fx-border-color: #7E57C2;" text="Add Supplier" textFill="#5e35b1">
