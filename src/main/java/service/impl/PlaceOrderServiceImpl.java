@@ -16,7 +16,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
     CustomerService customerService = new CustomerServiceImpl();
     ProductService productService = new ProductServiceImpl();
     OrderService orderService = new OrderServiceImpl();
-    //OrderDetailService orderDetailService = new OrderDetailServiceImpl();
+    OrderDetailService orderDetailService = new OrderDetailServiceImpl();
 
     @Override
     public Customer getCustomer(String customerId) {
@@ -39,7 +39,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
             boolean isAddOrder = orderService.placeOrders(order);
 
             if (isAddOrder){
-                boolean isAddOrderDetails = orderDetailsManagementService.addOrderDetails(order, cartItemObservableList);
+                boolean isAddOrderDetails = orderDetailService.addOrderDetails(order, cartItemObservableList);
                 if (isAddOrderDetails){
                     if(productService.updateProductQuantity(cartItemObservableList)){
                         // JOptionPane.showMessageDialog(null,"Order Placed..");
