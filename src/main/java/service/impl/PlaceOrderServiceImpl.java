@@ -6,10 +6,7 @@ import model.dto.CartItem;
 import model.dto.Customer;
 import model.dto.Order;
 import model.dto.Product;
-import service.CustomerService;
-import service.OrderDetailService;
-import service.PlaceOrderService;
-import service.ProductService;
+import service.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,6 +15,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
 
     CustomerService customerService = new CustomerServiceImpl();
     ProductService productService = new ProductServiceImpl();
+    OrderService orderService = new OrderServiceImpl();
     //OrderDetailService orderDetailService = new OrderDetailServiceImpl();
 
     @Override
@@ -38,7 +36,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
         try {
             connection.setAutoCommit(false);
 
-            boolean isAddOrder = orderManagementService.placeOrders(order);
+            boolean isAddOrder = orderService.placeOrders(order);
 
             if (isAddOrder){
                 boolean isAddOrderDetails = orderDetailsManagementService.addOrderDetails(order, cartItemObservableList);
