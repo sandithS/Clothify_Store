@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="620.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+<AnchorPane prefHeight="620.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
    <children>
       <Polygon fill="#d1c4e9" layoutX="342.0" layoutY="114.0" points="-342.0, 318.0, 219.5999755859375, -114.0, -342.0, -114.0" stroke="#d1c4e9" strokeType="INSIDE" />
       <Label layoutX="114.0" layoutY="51.0" style="-fx-border-color: #7E57C2;" text="Place Order" textFill="#5e35b1">
@@ -23,7 +23,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtProductId" layoutX="579.0" layoutY="255.0" promptText="Produt Id">
+      <JFXTextField fx:id="txtProductId" layoutX="579.0" layoutY="255.0" onAction="#txtProductIdOnAction" promptText="Produt Id">
          <font>
             <Font size="14.0" />
          </font>
@@ -40,10 +40,10 @@
       </JFXTextField>
       <TableView fx:id="tblCart" layoutX="42.0" layoutY="156.0" prefHeight="378.0" prefWidth="465.0">
          <columns>
-            <TableColumn fx:id="colCustomerId" prefWidth="89.60000228881836" text="Product Id" />
-            <TableColumn fx:id="colName" prefWidth="104.79998779296875" text="Product Name" />
-            <TableColumn fx:id="colPhoneNumber" prefWidth="88.80000305175781" text="Price" />
-            <TableColumn fx:id="colEmail" prefWidth="98.39996337890625" text="Quantity" />
+            <TableColumn fx:id="colProductId" prefWidth="89.60000228881836" text="Product Id" />
+            <TableColumn fx:id="colProductName" prefWidth="104.79998779296875" text="Product Name" />
+            <TableColumn fx:id="colPrice" prefWidth="88.80000305175781" text="Price" />
+            <TableColumn fx:id="colQuantity" prefWidth="98.39996337890625" text="Quantity" />
             <TableColumn fx:id="colTotal" prefWidth="84.80001220703127" text="Total" />
          </columns>
       </TableView>
@@ -59,7 +59,7 @@
       </Label>
       <Separator layoutX="552.0" layoutY="44.0" prefWidth="200.0" style="-fx-background-color: black;" />
       <Separator layoutX="550.0" layoutY="116.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" />
-      <JFXTextField fx:id="txtCustomerId" layoutX="579.0" layoutY="137.0" promptText="Customer Id">
+      <JFXTextField fx:id="txtCustomerId" layoutX="579.0" layoutY="137.0" onAction="#txtCustomerIdOnAction" promptText="Customer Id">
          <font>
             <Font size="14.0" />
          </font>

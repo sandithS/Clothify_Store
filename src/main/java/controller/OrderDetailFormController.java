@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class OrderDetailController {
+public class OrderDetailFormController {
 
     @FXML
     private JFXButton btnAdd;

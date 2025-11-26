@@ -15,7 +15,7 @@ import service.impl.CustomerServiceImpl;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CustomerController implements Initializable {
+public class CustomerFormController implements Initializable {
 
     CustomerService customerService = new CustomerServiceImpl();
 

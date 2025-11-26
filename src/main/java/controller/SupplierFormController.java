@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class SupplierController {
+public class SupplierFormController {
 
     @FXML
     private JFXButton btnAdd;
