@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import controller.pdf.PDFGenerator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -94,11 +95,16 @@ public class PlaceOrderFormController implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) throws SQLException {
-        placeOrderService.placeOrder(new Order(
-                txtOrderId.getText(),
-                String.valueOf(LocalDate.now()),
-                txtCustomerId.getText()
-        ),cartItemObservableList);
+
+        Order order = new Order(txtOrderId.getText(), String.valueOf(LocalDate.now()), txtCustomerId.getText());
+        byte[] pdfBytes = PDFGenerator.generateInvoiceBytes(order,cartItemObservableList);
+
+        if (pdfBytes != null) {
+            openPDF(pdfBytes); // optional
+        }
+
+        placeOrderService.placeOrder(order,cartItemObservableList);
+
     }
 
     @FXML
@@ -140,6 +146,20 @@ public class PlaceOrderFormController implements Initializable {
         for (CartItem cartItem: cartItemObservableList){
             netTotal += cartItem.getTotalPrice();
             txtTotal.setText(String.valueOf(netTotal));
+        }
+    }
+
+    private void openPDF(byte[] pdfBytes) {
+        try {
+            java.io.File temp = java.io.File.createTempFile("clothify_bill_", ".pdf");
+            temp.deleteOnExit();
+
+            java.nio.file.Files.write(temp.toPath(), pdfBytes);
+
+            java.awt.Desktop.getDesktop().open(temp);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
