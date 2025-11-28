@@ -3,7 +3,6 @@ package repository.impl;
 import db.DBConnection;
 import model.dto.OrderDetail;
 import repository.OrderDetailRepository;
-import repository.OrderRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -32,7 +32,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="colDescription" layoutX="697.0" layoutY="191.0" promptText="Description">
+      <JFXTextField fx:id="txtDescription" layoutX="697.0" layoutY="191.0" promptText="Description">
          <font>
             <Font size="14.0" />
          </font>
@@ -49,22 +49,22 @@
             <TableColumn fx:id="colQuantity" prefWidth="80.79998779296875" text="Quantity" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="colCategoryId" layoutX="697.0" layoutY="244.0" promptText="Category Id">
+      <JFXTextField fx:id="txtCategoryId" layoutX="697.0" layoutY="244.0" promptText="Category Id">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="colSupplierId" layoutX="697.0" layoutY="295.0" promptText="Supplier Id">
+      <JFXTextField fx:id="txtSupplierId" layoutX="697.0" layoutY="295.0" promptText="Supplier Id">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="colPrice" layoutX="697.0" layoutY="344.0" promptText="Price">
+      <JFXTextField fx:id="txtPrice" layoutX="697.0" layoutY="344.0" promptText="Price">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="colQuantity" layoutX="697.0" layoutY="394.0" promptText="Quantity">
+      <JFXTextField fx:id="txtQuantity" layoutX="697.0" layoutY="394.0" promptText="Quantity">
          <font>
             <Font size="14.0" />
          </font>
