@@ -49,7 +49,7 @@ public class ProductRepositoryImpl implements ProductRepository {
             preparedStatement.setObject(3, product.getDescription());
             preparedStatement.setObject(4, product.getPrice());
             preparedStatement.setObject(5, product.getSupplierId());
-            preparedStatement.setObject(5, product.getQuantity());
+            preparedStatement.setObject(6, product.getQuantity());
 
             preparedStatement.executeUpdate();
 

@@ -13,6 +13,12 @@ public class SupplierFormController {
     private JFXButton btnAdd;
 
     @FXML
+    private JFXButton btnDelete;
+
+    @FXML
+    private JFXButton btnUpdate;
+
+    @FXML
     private TableColumn<?, ?> colAddress;
 
     @FXML
@@ -53,6 +59,16 @@ public class SupplierFormController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
 
     }
 

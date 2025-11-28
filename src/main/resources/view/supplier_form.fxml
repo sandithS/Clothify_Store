@@ -17,22 +17,22 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtSupplierId" layoutX="637.0" layoutY="159.0" promptText="Supplier Id">
+      <JFXTextField fx:id="txtSupplierId" layoutX="637.0" layoutY="115.0" promptText="Supplier Id">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPhoneNumber" layoutX="637.0" layoutY="310.0" promptText=" Phone Number">
+      <JFXTextField fx:id="txtPhoneNumber" layoutX="637.0" layoutY="266.0" promptText=" Phone Number">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCategoryId" layoutX="637.0" layoutY="208.0" promptText="Category Id">
+      <JFXTextField fx:id="txtCategoryId" layoutX="637.0" layoutY="164.0" promptText="Category Id">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEmail" layoutX="637.0" layoutY="364.0" promptText="E-mail">
+      <JFXTextField fx:id="txtEmail" layoutX="637.0" layoutY="320.0" promptText="E-mail">
          <font>
             <Font size="14.0" />
          </font>
@@ -47,20 +47,30 @@
             <TableColumn fx:id="colAddress" prefWidth="112.00009155273438" text="Address" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnAdd" layoutX="681.0" layoutY="483.0" onAction="#btnAddOnAction" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #9575CD;" text="Add" textFill="WHITE">
+      <JFXTextField fx:id="txtSupplierName" layoutX="637.0" layoutY="216.0" promptText="Supplier Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" layoutX="638.0" layoutY="373.0" promptText="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="658.0" layoutY="426.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #9575CD;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtSupplierName" layoutX="637.0" layoutY="260.0" promptText="Supplier Name">
+      <JFXButton fx:id="btnUpdate" layoutX="658.0" layoutY="475.0" onAction="#btnUpdateOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4DD0E1;" text="Update" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtAddress" layoutX="638.0" layoutY="417.0" promptText="Address">
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="658.0" layoutY="524.0" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #FF6F00;" text="Delete" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-      </JFXTextField>
+      </JFXButton>
    </children>
 </AnchorPane>
