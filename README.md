@@ -51,7 +51,7 @@ These instructions will get you a copy of the project up and running on your loc
   * **MySQL Server** (Running instance)
   * A compatible IDE (IntelliJ IDEA or Eclipse) with JavaFX support.
 
-### 1\. Cloning and Setup
+### Cloning and Setup
 
 ```bash
 # Clone the repository
