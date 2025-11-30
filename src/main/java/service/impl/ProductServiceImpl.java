@@ -28,10 +28,10 @@ public class ProductServiceImpl implements ProductService {
         try {
             while (resultSet.next()) {
                 Product item = new Product(
-                        resultSet.getString("product_id"),
-                        resultSet.getString("sku"),
+                        resultSet.getString("productId"),
                         resultSet.getString("name"),
                         resultSet.getString("description"),
+                        resultSet.getString("supplierId"),
                         resultSet.getDouble("price"),
                         resultSet.getInt("quantity")
                 );
@@ -60,10 +60,10 @@ public class ProductServiceImpl implements ProductService {
         try {
             resultSet.next();
             return new Product(
-                    resultSet.getString("product_id"),
-                    resultSet.getString("sku"),
+                    resultSet.getString("productId"),
                     resultSet.getString("name"),
                     resultSet.getString("description"),
+                    resultSet.getString("supplierId"),
                     resultSet.getDouble("price"),
                     resultSet.getInt("quantity")
             );

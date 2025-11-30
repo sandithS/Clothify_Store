@@ -93,9 +93,9 @@ public class CustomerFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customer_id"));
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         loadTable();

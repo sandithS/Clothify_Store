@@ -28,7 +28,7 @@ public class OrderServiceImpl implements OrderService {
             while (resultSet.next()) {
                 Order order = new Order(
                         resultSet.getString("OrderID"),
-                        resultSet.getString("Date"),
+                        resultSet.getString("Dateof"),
                         resultSet.getString("customerID")
                 );
                 orderList.add(order);

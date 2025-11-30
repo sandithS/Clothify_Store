@@ -30,7 +30,7 @@ public class SupplierFormController implements Initializable {
     private TableColumn<?, ?> colAddress;
 
     @FXML
-    private TableColumn<?, ?> colCategoryId;
+    private TableColumn<?, ?> colProdutId;
 
     @FXML
     private TableColumn<?, ?> colEmail;
@@ -51,7 +51,7 @@ public class SupplierFormController implements Initializable {
     private JFXTextField txtAddress;
 
     @FXML
-    private JFXTextField txtCategoryId;
+    private JFXTextField txtProductId;
 
     @FXML
     private JFXTextField txtEmail;
@@ -71,6 +71,7 @@ public class SupplierFormController implements Initializable {
     void btnAddOnAction(ActionEvent event) {
         Supplier supplier = new Supplier(
                 txtSupplierId.getText(),
+                txtProductId.getText(),
                 txtSupplierName.getText(),
                 txtPhoneNumber.getText(),
                 txtEmail.getText(),
@@ -90,6 +91,7 @@ public class SupplierFormController implements Initializable {
     void btnUpdateOnAction(ActionEvent event) {
         Supplier supplier = new Supplier(
                 txtSupplierId.getText(),
+                txtProductId.getText(),
                 txtSupplierName.getText(),
                 txtPhoneNumber.getText(),
                 txtEmail.getText(),
@@ -101,9 +103,10 @@ public class SupplierFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplier_id"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colProdutId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colSupplierName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
 

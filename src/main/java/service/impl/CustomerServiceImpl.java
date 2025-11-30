@@ -27,9 +27,9 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             while (resultSet.next()) {
                 Customer customer = new Customer(
-                        resultSet.getString("customer_id"),
+                        resultSet.getString("id"),
                         resultSet.getString("name"),
-                        resultSet.getString("phone"),
+                        resultSet.getString("phoneNumber"),
                         resultSet.getString("email")
                 );
                 customerList.add(customer);
@@ -57,9 +57,9 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             resultSet.next();
             return new Customer(
-                    resultSet.getString("customer_id"),
+                    resultSet.getString("id"),
                     resultSet.getString("name"),
-                    resultSet.getString("phone"),
+                    resultSet.getString("phoneNumber"),
                     resultSet.getString("email")
             );
         } catch (SQLException e) {

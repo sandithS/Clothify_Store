@@ -27,9 +27,6 @@ public class ProductFormController implements Initializable {
     private JFXButton btnUpdate;
 
     @FXML
-    private TableColumn<?, ?> colCategoryId;
-
-    @FXML
     private TableColumn<?, ?> colDescription;
 
     @FXML
@@ -45,16 +42,10 @@ public class ProductFormController implements Initializable {
     private TableColumn<?, ?> colQuantity;
 
     @FXML
-    private TableColumn<?, ?> colSku;
-
-    @FXML
     private TableColumn<?, ?> colSupplierId;
 
     @FXML
     private TableView<Product> tblProducts;
-
-    @FXML
-    private JFXTextField txtCategoryId;
 
     @FXML
     private JFXTextField txtDescription;
@@ -70,9 +61,6 @@ public class ProductFormController implements Initializable {
 
     @FXML
     private JFXTextField txtQuantity;
-
-    @FXML
-    private JFXTextField txtSku;
 
     @FXML
     private JFXTextField txtSupplierId;
@@ -116,9 +104,9 @@ public class ProductFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
-        colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        colProductName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplier_id"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
@@ -134,6 +122,7 @@ public class ProductFormController implements Initializable {
     private void setSelectedValue(Product selectedValue) {
         txtProductId.setText(selectedValue.getProductId());
         txtDescription.setText(selectedValue.getDescription());
+        txtSupplierId.setText(selectedValue.getSupplierId());
         txtProductName.setText(selectedValue.getName());
         txtPrice.setText(String.valueOf(selectedValue.getPrice()));
         txtQuantity.setText(String.valueOf(selectedValue.getQuantity()));

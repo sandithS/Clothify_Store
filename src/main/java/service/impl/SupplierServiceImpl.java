@@ -27,9 +27,10 @@ public class SupplierServiceImpl implements SupplierService {
         try {
             while (resultSet.next()) {
                 Supplier item = new Supplier(
-                        resultSet.getString("supplier_id"),
+                        resultSet.getString("supplierId"),
+                        resultSet.getString("productId"),
                         resultSet.getString("name"),
-                        resultSet.getString("phone"),
+                        resultSet.getString("phoneNumber"),
                         resultSet.getString("email"),
                         resultSet.getString("address")
                 );
@@ -58,9 +59,10 @@ public class SupplierServiceImpl implements SupplierService {
         try {
             resultSet.next();
             return new Supplier(
-                    resultSet.getString("supplier_id"),
+                    resultSet.getString("supplierId"),
+                    resultSet.getString("productId"),
                     resultSet.getString("name"),
-                    resultSet.getString("phone"),
+                    resultSet.getString("phoneNumber"),
                     resultSet.getString("email"),
                     resultSet.getString("address")
             );

@@ -14,7 +14,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public void addCustomer(Customer customer) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Customers VALUES(?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Customer VALUES(?,?,?,?)");
 
             preparedStatement.setObject(1, customer.getId());
             preparedStatement.setObject(2, customer.getName());
@@ -32,7 +32,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public ResultSet getAllCustomers() {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customers");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer");
             return preparedStatement.executeQuery();
 
         } catch (SQLException e) {
@@ -44,7 +44,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public ResultSet searchCustomer(String custId) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customers WHERE customer_id = ? ");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE id = ? ");
             preparedStatement.setObject(1,custId);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -58,7 +58,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public void updateCustomer(Customer customer) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Customers SET name=?, phone=?, email=? WHERE customer_id=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Customer SET name=?, phoneNumber=?, email=? WHERE id=?");
 
             preparedStatement.setObject(1, customer.getName());
             preparedStatement.setObject(2, customer.getPhoneNumber());
@@ -75,7 +75,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public void deleteCustomer(String custId) {
         try {
-            DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customers WHERE customer_id='" + custId + "'");
+            DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customer WHERE id='" + custId + "'");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

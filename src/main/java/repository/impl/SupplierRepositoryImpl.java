@@ -14,7 +14,7 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     public ResultSet getAll() {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM suppliers");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM supplier");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return resultSet;
@@ -27,7 +27,7 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     public ResultSet searchSupplier(String supplierId, String sullpierName) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM suppliers WHERE supplier_id = ? OR name = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM supplier WHERE supplierId = ? OR name = ?");
             preparedStatement.setObject(1,supplierId);
             preparedStatement.setObject(2,sullpierName);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -42,9 +42,10 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     public void addSupplier(Supplier supplier) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO suppliers VALUES(?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO supplier VALUES(?,?,?,?,?,?)");
 
             preparedStatement.setObject(1, supplier.getSupplierId());
+            preparedStatement.setObject(2, supplier.getProductId());
             preparedStatement.setObject(3, supplier.getName());
             preparedStatement.setObject(4, supplier.getPhoneNumber());
             preparedStatement.setObject(5, supplier.getEmail());
@@ -61,9 +62,9 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     public void updateSupplier(Supplier supplier) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE suppliers SET category_id=?, name=?, phone=?, email=?, address=? WHERE supplier_id=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE supplier SET productId=?, name=?, phoneNumber=?, email=?, address=? WHERE supplierId=?");
 
-           // preparedStatement.setObject(1, supplier.getName());
+            preparedStatement.setObject(1, supplier.getProductId());
             preparedStatement.setObject(2, supplier.getName());
             preparedStatement.setObject(3, supplier.getPhoneNumber());
             preparedStatement.setObject(4, supplier.getEmail());
@@ -80,7 +81,7 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     @Override
     public void deleteSupplier(String supplierId) {
         try {
-            DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM suppliers WHERE supplier_id='" + supplierId + "'");
+            DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM supplier WHERE supplierId='" + supplierId + "'");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

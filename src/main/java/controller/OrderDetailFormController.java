@@ -2,13 +2,20 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import controller.pdf.PDFGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.dto.OrderDetail;
+import service.OrderDetailService;
+import service.impl.OrderDetailServiceImpl;
 
-public class OrderDetailFormController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class OrderDetailFormController implements Initializable {
 
     @FXML
     private JFXButton btnAdd;
@@ -26,7 +33,7 @@ public class OrderDetailFormController {
     private TableColumn<?, ?> colTotal;
 
     @FXML
-    private TableView<?> tblOrderDetails;
+    private TableView<OrderDetail> tblOrderDetails;
 
     @FXML
     private JFXTextField txtOrderId;
@@ -40,34 +47,24 @@ public class OrderDetailFormController {
     @FXML
     private JFXTextField txtTotal;
 
+    OrderDetailService orderDetailService = new OrderDetailServiceImpl();
+
     @FXML
     void btnAddOnAction(ActionEvent event) {
-//        GeneratePdf generatePdf = new GeneratePdf();
-//        generatePdf.generateBill();
-//
-//
-//        byte[] pdfBytes = PDFGenerator.generateInvoiceBytes();
-//
-//        if (pdfBytes != null) {
-//            openPDF(pdfBytes); // optional
-//        }
-//
-//
-//    }
-//
-//    private void openPDF(byte[] pdfBytes) {
-//        try {
-//            java.io.File temp = java.io.File.createTempFile("clothify_bill_", ".pdf");
-//            temp.deleteOnExit();
-//
-//            java.nio.file.Files.write(temp.toPath(), pdfBytes);
-//
-//            java.awt.Desktop.getDesktop().open(temp);
-//
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//    }
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colOrderId.setCellValueFactory(new PropertyValueFactory<>("orderId"));
+        colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
+        colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+
+        loadTable();
+    }
+
+    private void loadTable() {
+        tblOrderDetails.setItems(orderDetailService.getAllOrderDetails());
     }
 }
